@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hwk-deployment
+  labels:
+    app: hwk
+spec:
+  selector:
+    matchLabels:
+      app: hwk
+  template:
+    metadata:
+      labels:
+        app: hwk
+    spec:
+      containers:
+      - name: hwk
+        image: hwk:latest
+        ports:
+        - containerPort: 8080
